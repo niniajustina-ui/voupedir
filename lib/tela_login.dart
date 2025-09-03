@@ -31,15 +31,15 @@ class TelaLogin extends StatelessWidget {
               SizedBox(height: 20,),
               ElevatedButton(onPressed: () async{
 
-              final sucesso =await UsuarioDAO.autenticar(, senha)
+              final sucesso = await UsuarioDAO.autenticar(usuarioController.text, senhaController.text);
 
-                if(u.login == usuarioController.text && u.senha == senhaController.text){
+                if(sucesso){
                   Navigator.push(context,
                   MaterialPageRoute(builder: (context) => TelaHome())
                   );
                 }else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Usuario ou  Senha invalido!!"))
+                      const SnackBar(content: Text("Usuario ou  Senha invalido!!"))
                   );
                 }
               }, child: const Text('logar')),

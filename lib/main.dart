@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'tela_login.dart';
+import 'package:voupedir/tela_login.dart';
 import 'usuario.dart';
 import 'tipo.dart';
 import 'restaurante.dart';
